@@ -30,3 +30,7 @@ def create_app(config_name):
     bootstap.init_app(app)
     configure_uploads(app,photos)
     mail.init_app(app)
+    
+
+
+    return app

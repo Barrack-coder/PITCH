@@ -1,6 +1,6 @@
 # PITCH
 
-# Description
+## Description
 A  site that you can get a pitch in 60seconds
 
 Logged in users have their profile page where they can view the blogs they posted and see comments made. One can delete a comment, and a blog as well.
@@ -36,7 +36,7 @@ Ensure to have the correct folder structure to minimize errors
 It would be so great to have your contributions! Just follow the instructions below.
 
 Fork the repo
-Clone the repo in your machine but ensure you have all the necessary modules.(You can find them in the set up instructions above) git clone https://github.com/Barrack-coder/P-Blog.git
+Clone the repo in your machine but ensure you have all the necessary modules.(You can find them in the set up instructions above) git clone https://github.com/Barrack-coder/PITCH.git
 Create a new branch git branch contributions
 Edit your changes in your branch
 Run the application python3.8 manage.py server
@@ -46,9 +46,9 @@ Currently the application is having trouble trying to send emails to the user. T
 
 # Behaviour Driven Development
 Input	Output	Behavior
-Visit Bloggy site	Various blogs are displayed	User can only see other people's pitches
+Visit pitch site	Various pitches are displayed	User can only see other people's pitches
 Sign in	Application sends a welcoming message	User has an account
-Click on new blog	Application displays a form for you to post a blog	Submit to save blog is saved
+Click on new blog	Application displays a form for you to post a pitch	Submit to save pitch is saved
 Subscribe...	Each time there's a new blog user recieves email	app send email
 Sign out	Home page is displayed	leaves current logged in user
 Visit profile	Profile details displayed	user can edit blogs they posted or upload profile photo

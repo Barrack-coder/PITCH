@@ -1,7 +1,7 @@
 from flask import render_template, redirect,request,url_for,abort
 from . import main
 from flask_login import login_required,current_user
-from ..models import User,Pitch,Comment,Upvote,Downvote  
+from ..model import User,Pitch,Comment,Upvote,Downvote  
 from .forms import UpdateProfile,PitchNow,MyComment,UpVote,DownVote
 from .. import db
 
@@ -114,7 +114,7 @@ def update_profile(uname):
 def update_pic(uname):
     user = User.query.filter_by(username=uname).first()
     if 'photo' in request.files:
-        filename = photos.save(request.files['photo'])
+        filename = "photos.save(request.files['photo'])"
         path = f'photos/{filename}'
         user.profile_pic_path = path 
         db.session.commit()

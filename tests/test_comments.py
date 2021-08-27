@@ -1,6 +1,7 @@
 import unittest
-from app.models import Comment,Pitch
+from app.model import Comment,Pitch,User
 from app import db
+
 
 
 class TestPitch(unittest.TestCase):

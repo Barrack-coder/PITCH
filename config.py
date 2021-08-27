@@ -10,7 +10,7 @@ import os
 
 class Config:
     SECRET_KEY='54321'
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://Access@localhost/ppitch'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://postgres:54321@localhost/pitch'
     UPLOADED_PHOTOS_DEST='app/static/photos'
     # email configurations
     # MAIL_SERVER = 'stmp.googlemail.com'
@@ -26,7 +26,7 @@ class Config:
 
 
 class ProdConfig(Config):
-    pass
+    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
 
 
 class DevConfig(Config):

@@ -20,7 +20,7 @@ def index():
 
     return render_template('home.html',title=title,pitch=pitch,upvotes=upvotes,business_pitch=business_pitch,interview_pitch=interview_pitch,sales_pitch=sales_pitch,production_pitch=promotion_pitch)
 
-@main.route('/pitches/new/',methods=['GET','POST'])
+@main.route('/pitch/new',methods=['GET','POST'])
 @login_required
 def new_pitch():
     form = PitchNow()
@@ -30,13 +30,12 @@ def new_pitch():
         title = form.title.data
         owner_id = current_user
         category = form.category.data
-        print(current_user.get_current_object().id)
-        new_pitch = Pitch(owner_id =current_user._get_current_object().id, title = title,description=description,category=category)
+        new_pitch = Pitch(owner_id =current_user.id, title = title,description=description,category=category)
         db.session.add(new_pitch)
         db.session.commit()
 
         return redirect(url_for('main.index'))
-    return render_template('pitches.html',form=form)
+    return render_template('pitch.html',form=form)
 
 @main.route('/comment/new/<int:pitch_id>',methods=['GET','POST'])
 @login_required
